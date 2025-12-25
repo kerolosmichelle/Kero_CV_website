@@ -1,0 +1,547 @@
+{% extends "base.html" %}
+{% block title %}Kerolos Michelle | Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-text" data-aos="fade-right">
+            <h1>Hi, I’m <br><span>Kerolos Michelle</span></h1>
+
+            <h2 class="role">
+                And I am a <span id="typing"></span>
+            </h2>
+
+            <p>
+STEM high school student and programmer with a strong passion for web development, problem solving, and technology. I build clean, responsive web applications using HTML, CSS, Bootstrap, and JavaScript, with a solid foundation in Python.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Kerolos.Michelle" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/kerolos_michelle/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kerolos-micheal-71696234b/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/kerolosmichelle" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image" data-aos="fade-left">
+            <img src="{{ url_for('static', filename='images/landing-image.png') }}" alt="Profile">
+        </div>
+    </div>
+</section>
+<section id="about" class="section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p class="section-text">
+        I am a STEM high school student with a strong academic background and a passion for programming, web development, and problem-solving. I aim to combine technology and creativity to build practical and educational projects.
+    </p>
+</section>
+
+<section class="os-section">
+    <div class="window-container">
+        <div class="window-header">
+            <div class="window-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="window-title">cmd — about_me.sh</div>
+        </div>
+        
+        <div class="window-main">
+            <div class="window-sidebar">
+                <button class="nav-item active" onclick="switchTab(this, 'bio')"><i class="fas fa-user"></i> Bio</button>
+                <button class="nav-item" onclick="switchTab(this, 'hobbies')"><i class="fas fa-heart"></i> Hobbies</button>
+                <button class="nav-item" onclick="switchTab(this, 'setup')"><i class="fas fa-desktop"></i> Setup</button>
+            </div>
+            
+            <div class="window-content">
+                <div id="bio" class="tab-pane active">
+                    <p class="typing-text">> Hello!</p>
+                    <p>Hello! I am Kerolos Michelle, a STEM high school student and programmer. I enjoy creating web applications and exploring programming challenges, especially in Python and front-end development.</p>
+                    <p>Current focus: Improving my web development skills and building projects that combine STEM and technology.</p>
+                </div>
+                <div id="hobbies" class="tab-pane">
+                        <p>> My main interests outside school and coding:</p>
+                        <ul>
+                            <li>🧪 STEM competitions and Physics Olympiads</li>
+                            <li>💻 Web development and programming projects</li>
+                            <li>📚 Learning new technologies and improving skills</li>
+                            <li>♟️ Playing Chess</li>
+                            <li>🤝 Volunteering</li>
+                            <li>📖 English courses and German courses</li>
+                        </ul>
+                </div>
+                <div id="setup" class="tab-pane">
+                    <p>> My current workstation:</p>
+                    <p>
+                        <ul>
+                            <li>Python programming</li>
+                            <li>Front-end web development (HTML, CSS, Bootstrap, JS)</li>
+                            <li>Problem-solving and STEM projects(Capstone)</li>
+                            <li>Participating in academic competitions</li>
+                        </ul></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-robot-section">
+    <h2 class="section-title">System Analysis: Me</h2>
+    <div class="robot-container">
+        <div class="robot-core">
+            <div class="robot-head">
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="scanning-line"></div>
+            <div class="core-glow"></div>
+        </div>
+
+        <div class="circuit-lines">
+            <div class="line l1"></div>
+            <div class="line l2"></div>
+            <div class="line l3"></div>
+            <div class="line l4"></div>
+        </div>
+
+        <div class="info-nodes">
+            <div class="node node-tl">
+                <div class="node-icon"><i class="fas fa-microchip"></i></div>
+                <div class="node-content">
+                    <h3>Logic Core</h3>
+                    <p>Strong analytical thinking developed through STEM education, programming, and physics competitions.</p>
+                </div>
+            </div>
+
+            <div class="node node-tr">
+                <div class="node-icon"><i class="fas fa-eye"></i></div>
+                <div class="node-content">
+<h3>Visual Sensors</h3>
+<p>Focused on clean layouts and user-friendly interfaces. I pay attention to detail in every project I build.</p>
+                </div>
+            </div>
+
+            <div class="node node-bl">
+                <div class="node-icon"><i class="fas fa-heart"></i></div>
+                <div class="node-content">
+<h3>Empathy Drive</h3>
+<p>I enjoy building projects that are practical and educational, making technology accessible and useful.</p>
+                </div>
+            </div>
+
+            <div class="node node-br">
+                <div class="node-icon"><i class="fas fa-bolt"></i></div>
+                <div class="node-content">
+<h3>High Output</h3>
+<p>Constantly learning new programming languages and tools to improve my skills and complete challenging projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+                <h3>HTML, CSS, Bootstrap</h3>
+            <div class="progress-wrapper">
+                <div class="progress-bar" style="--width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+            <div class="progress-wrapper">
+                <div class="progress-bar" style="--width: 85%;"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fa-solid fa-code"></i>
+                <h3>Python & Problem Solving</h3>
+            <div class="progress-wrapper">
+                <div class="progress-bar" style="--width: 75%;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="orbit-section">
+    <div class="orbit-container">
+        <h2 class="section-title" style="position: relative; z-index: 10;">My Tech Stack</h2>
+        <div class="orbit-scene">
+            <div class="core-hub">
+                <i class="fas fa-user-astronaut"></i>
+                <span>Creator</span>
+            </div>
+
+            <div class="ring ring-1">
+                <div class="tech-icon" style="--idx: 0;"><i class="fab fa-js"></i><span>JS</span></div>
+                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="tech-icon" style="--idx: 2;"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="tech-icon" style="--idx: 3;"><i class="fab fa-aws"></i><span>AWS</span></div>
+
+            </div>
+
+            <div class="ring ring-2">
+                <div class="tech-icon" style="--idx: 0;"><i class="fas fa-code"></i><span>Code</span></div>
+                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-google"></i><span>Google</span></div>
+                <div class="tech-icon" style="--idx: 2;"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            </div>
+
+             <div class="ring ring-3">
+                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
+                <div class="tech-icon" style="--idx: 0;"><i class="fas fa-headphones"></i><span>Headphones</span></div>
+                <div class="tech-icon" style="--idx: 2;"><i class="fas fa-microphone"></i><span>Microphone</span></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio-section" id="portfolio">
+    <div class="portfolio-header">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="slider-controls">
+            <button class="control-btn prev" onclick="moveSlider(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="control-btn next" onclick="moveSlider(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="slider-viewport">
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=600" alt="Work 1">
+                        <div class="badge">Front-End</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Marketing Website</h3>
+                        <p>A responsive marketing website built with HTML, CSS, and Bootstrap, showcasing design skills and interactivity.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>HTML5</span>
+                                <span>Bootstrap</span> 
+                            </div>
+                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work 2 -->
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Results Python Web App">
+                        <div class="badge">Python / Flask</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Results Python Web App</h3>
+                        <p>A web application built with Python and Flask to display student results dynamically, hosted on PythonAnywhere.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>Python</span>
+                                <span>Flask</span>
+                            </div>
+                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work 3 -->
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Simple iPhone Store">
+                        <div class="badge">E-Commerce</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Simple iPhone Store</h3>
+                        <p>A front-end e-commerce page showcasing products using HTML, CSS, and JavaScript with smooth animations.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work 4 -->
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="JavaScript Calculator">
+                        <div class="badge">JS App</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>JavaScript Calculator</h3>
+                        <p>A functional calculator web app built using HTML, CSS, and vanilla JavaScript to demonstrate interactivity and logic.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work 5 -->
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Blog Page">
+                        <div class="badge">Front-End</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Blog Page</h3>
+                        <p>A clean and responsive blog template showcasing content layout and styling using HTML, CSS, and Bootstrap.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<header class="roadmap-header">
+    <h1>Project Roadmap</h1>
+    <p>Scroll down to track our journey through time</p>
+</header>
+
+<div class="timeline-container" id="timelineSec">
+    <div class="main-line"></div>
+    <div class="progress-fill" id="progressFill"></div>
+
+    <div class="item">
+        <div class="icon-node"><i class="fas fa-brain"></i></div>
+        <div class="timeline-card">
+            <h3>Concept Art</h3>
+            <p>Developed the visual identity and structure for projects, focusing on usability and design clarity.</p>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="icon-node"><i class="fas fa-layer-group"></i></div>
+        <div class="timeline-card">
+            <h3>Architecture</h3>
+            <p>Built the foundation of web projects using HTML, CSS, and Flask frameworks for reliable performance.</p>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="icon-node"><i class="fas fa-microchip"></i></div>
+        <div class="timeline-card">
+            <h3>AI Integration</h3>
+            <p>Implemented Python logic for automation and calculations, integrating problem-solving algorithms where needed.</p>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="icon-node"><i class="fas fa-globe"></i></div>
+        <div class="timeline-card">
+            <h3>World Launch</h3>
+            <p>Hosted projects online and made them publicly accessible using PythonAnywhere and static hosting for front-end pages.</p>
+        </div>
+    </div>
+</div>
+
+<section class="bento-section">
+    <h2 class="section-title">My World</h2>
+    <div class="bento-grid">
+        <div class="bento-item exp-box">
+            <span class="bento-tag">Work Experience</span>
+            <h3>Student Developer & Transcriber</h3>
+            <p>Built multiple educational and portfolio projects, sharing knowledge through YSJ blog posts and tutorials. Also, Working at Pharma Company for Transcribe audios whoch are for customer`s feedbacks on medical Products.</p>
+            <div class="bento-footer">2022 - Present</div>
+        </div>
+
+        <div class="bento-item stat-box">
+            <div class="stat-content">
+                <h2 class="counter" data-target="30">0</h2>
+                <p>Projects Completed</p>
+            </div>
+        </div>
+
+        <div class="bento-item edu-box">
+            <span class="bento-tag">Education</span>
+            <h3>STEM High School</h3>
+            <p>Excellence in Science, Technology, and English, GPA: 3.8 / 4.0</p>
+            <i class="fas fa-graduation-cap bento-icon"></i>
+        </div>
+
+        <div class="bento-item stat-box">
+            <div class="stat-content">
+                <h2 class="counter" data-target="6">0</h2>
+                <p>Companies Certificates.</p>
+            </div>
+        </div>
+
+        <div class="bento-item quote-box">
+            <p>"Technology and learning go hand in hand. I aim to build solutions that educate and inspire."</p>
+            <span>- Kerolos Michelle</span>
+        </div>
+    </div>
+</section>
+
+<section class="expertise-section" id="expertise">
+    <div class="expertise-container">
+        <div class="exp-header">
+            <h2 class="section-title">What I Can Do</h2>
+            <p>Practical skills built through projects, competitions, and self-learning.</p>
+        </div>
+        <div class="exp-list">
+            <div class="exp-item">
+                <span class="exp-num">01</span>
+                <div class="exp-text">
+                    <h3>Web Design & UI</h3>
+                    <p>Designing clean, responsive, and user-friendly interfaces using HTML, CSS, and Bootstrap.</p>
+                </div>
+                <i class="fas fa-bezier-curve"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">02</span>
+                <div class="exp-text">
+                    <h3>Frontend Development</h3>
+                    <p>Building interactive web pages with JavaScript and structured layouts that work on all devices.</p>
+                </div>
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">03</span>
+                <div class="exp-text">
+                    <h3>Transcription & Content Editing</h3>
+                    <p>Providing accurate transcription and content formatting with strong attention to detail and clarity.</p>
+                </div>
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-section" id="testimonials">
+    <h2 class="section-title">Wall of Praise</h2>
+    <div class="testimonial-grid">
+        <div class="test-card">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"Kerolos is highly committed and detail-oriented. His transcription work is accurate, well-structured, and always delivered on time."</p>
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                <div>
+                    <h4>YSJ Platform Team</h4>
+                    <span>Content & Media</span>
+                </div>
+            </div>
+        </div>
+        <div class="test-card">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"A motivated STEM student with strong programming fundamentals. His web projects show clarity, logic, and continuous improvement."</p>
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                <div>
+                    <h4>STEM Mentor</h4>
+                    <span>Academic Guidance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section" id="faq">
+    <h2 class="section-title">Common Queries</h2>
+    <div class="faq-accordion">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How did you learn your skills?</span>
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Most of my education is self-taught through YouTube, online platforms, and hands-on projects, supported by certificates from different companies.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What services do you currently offer?</span>
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+                <p>I work on web development projects and professional transcription, focusing on accuracy, clarity, and clean structure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" id="contact" style="padding: 100px 0;">
+    <h2 class="section-title" style="text-align: center;">Connect With Me</h2>
+    <div id="cards" style="margin: 0 auto; justify-content: center;">
+        <div class="card">
+            <div class="card_content">
+                <i class="fa-brands fa-instagram icon-social"></i>
+                <h2>Instagram</h2>
+                <p>Followers : <span>625k</span></p>
+                <a href="#">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="btn-social">Follow me</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card_content">
+                <i class="fa-brands fa-github icon-social"></i>
+                <h2>Github</h2>
+                <p>Followers : <span>150k</span></p>
+                <a href="#">
+                    <i class="fa-solid fa-link "></i>
+                    <span class="btn-social">Follow me</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card_content">
+                <i class="fa-brands fa-linkedin icon-social"></i>
+                <h2>Linkedin</h2>
+                <p>Connection : <span>100k</span></p>
+                <a href="#">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="btn-social">Connect</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
