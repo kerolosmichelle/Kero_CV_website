@@ -32,11 +32,12 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#honors">Honors</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
+            <button id="plain-toggle" class="plain-toggle" type="button" title="Plain quick view">Plain view</button>
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="checkbox">
                     <input type="checkbox" id="checkbox" />
@@ -57,6 +58,7 @@
 <section class="hero">
     <div class="hero-container">
         <div class="hero-text" data-aos="fade-right">
+            <span class="status-pill"><span class="status-dot"></span> Open to internships and learning opportunities</span>
             <h1>Hi, I’m <br><span>Kerolos Michelle</span></h1>
 
             <h2 class="role">
@@ -67,8 +69,10 @@
 STEM high school student and programmer with a strong passion for web development, problem solving, and technology. I build clean, responsive web applications using HTML, CSS, Bootstrap, and JavaScript, with a solid foundation in Python.
             </p>
 
+            <p class="core-stack">Python <span>/</span> Flask <span>/</span> HTML &amp; CSS <span>/</span> JavaScript</p>
+
             <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#portfolio" class="btn-primary">View Projects</a>
                 <a href="#contact" class="btn-secondary">Contact Me</a>
             </div>
 
@@ -89,15 +93,23 @@ STEM high school student and programmer with a strong passion for web developmen
         </div>
 
         <div class="hero-image" data-aos="fade-left">
-            <img src="static/images/landing-image.png" alt="Profile">
+            <img src="static/images/profile.jpg" alt="Kerolos Michelle">
         </div>
     </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to explore">SCROLL TO EXPLORE <i class="fas fa-chevron-down"></i></a>
 </section>
 <section id="about" class="section" data-aos="fade-up">
+    <span class="sec-kicker">01 - ABOUT</span>
     <h2>About Me</h2>
     <p class="section-text">
-        I am a STEM high school student with a strong academic background and a passion for programming, web development, and problem-solving. I aim to combine technology and creativity to build practical and educational projects.
+        I am a STEM high school student at a government STEM school in 6th of October (Science track, graduating July 2027). I work as a community pharmacy assistant, I build websites, and I compete in science and programming competitions. I aim to combine technology and creativity to build practical and educational projects.
     </p>
+</section>
+
+<section class="section" id="school" data-aos="fade-up" style="text-align:center;">
+    <h2 class="section-title">My School</h2>
+    <img src="static/images/school.jpg" alt="Kerolos at his school" style="max-width:420px;width:100%;border-radius:20px;margin:20px auto;display:block;">
+    <p class="section-text">At my school, where I study science and technology and where most of my projects started.</p>
 </section>
 
 <section class="os-section">
@@ -206,7 +218,8 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </section>
 
-<section class="skills-section">
+<section class="skills-section" data-aos="fade-up">
+    <span class="sec-kicker">03 - SKILLS</span>
     <h2 class="section-title">Technical Expertise</h2>
     <div class="skills-grid">
         <div class="skill-card">
@@ -266,9 +279,10 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </section>
 
-<section class="portfolio-section" id="portfolio">
+<section class="portfolio-section" id="portfolio" data-aos="fade-up">
     <div class="portfolio-header">
-        <h2 class="section-title">My Portfolio</h2>
+        <div><span class="sec-kicker">02 - PROJECTS</span>
+        <h2 class="section-title">My Portfolio</h2></div>
         <div class="slider-controls">
             <button class="control-btn prev" onclick="moveSlider(-1)"><i class="fas fa-chevron-left"></i></button>
             <button class="control-btn next" onclick="moveSlider(1)"><i class="fas fa-chevron-right"></i></button>
@@ -280,28 +294,47 @@ STEM high school student and programmer with a strong passion for web developmen
             <div class="slide-item">
                 <div class="portfolio-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=600" alt="Work 1">
-                        <div class="badge">Front-End</div>
+                        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=600" alt="Sourial Deacons School Website">
+                        <div class="badge">Design + Front-End</div>
                     </div>
                     <div class="card-body">
-                        <h3>Marketing Website</h3>
-                        <p>A responsive marketing website built with HTML, CSS, and Bootstrap, showcasing design skills and interactivity.</p>
+                        <h3>Sourial Deacons School Website</h3>
+                        <p>Designed the UI in Figma and built the frontend for the Deacons' School of Archangel Sourial &amp; St. Mina Church.</p>
                         <div class="card-footer">
                             <div class="tech-stack">
-                                <span>HTML5</span>
-                                <span>Bootstrap</span> 
+                                <span>Figma</span>
+                                <span>Front-End</span>
                             </div>
-                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://sourialdeacons.com" class="view-link" target="_blank">Visit Site <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Work 2 -->
             <div class="slide-item">
                 <div class="portfolio-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Results Python Web App">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Personal Portfolio Website">
+                        <div class="badge">Web</div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>This website. Built with HTML, CSS, JavaScript and Flask, and deployed on GitHub Pages.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack">
+                                <span>HTML/CSS/JS</span>
+                                <span>Flask</span>
+                            </div>
+                            <a href="https://github.com/kerolosmichelle/Kero_CV_website" class="view-link" target="_blank">Source Code <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Results Python Web App">
                         <div class="badge">Python / Flask</div>
                     </div>
                     <div class="card-body">
@@ -312,70 +345,6 @@ STEM high school student and programmer with a strong passion for web developmen
                                 <span>Python</span>
                                 <span>Flask</span>
                             </div>
-                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Work 3 -->
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Simple iPhone Store">
-                        <div class="badge">E-Commerce</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Simple iPhone Store</h3>
-                        <p>A front-end e-commerce page showcasing products using HTML, CSS, and JavaScript with smooth animations.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>HTML</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Work 4 -->
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="JavaScript Calculator">
-                        <div class="badge">JS App</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>JavaScript Calculator</h3>
-                        <p>A functional calculator web app built using HTML, CSS, and vanilla JavaScript to demonstrate interactivity and logic.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                            </div>
-                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Work 5 -->
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Blog Page">
-                        <div class="badge">Front-End</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Blog Page</h3>
-                        <p>A clean and responsive blog template showcasing content layout and styling using HTML, CSS, and Bootstrap.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>HTML</span>
-                                <span>Bootstrap</span>
-                            </div>
-                            <a href="#" class="view-link">Case Study <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -385,9 +354,9 @@ STEM high school student and programmer with a strong passion for web developmen
     <div class="slider-dots" id="sliderDots"></div>
 </section>
 
-<header class="roadmap-header">
+<header class="roadmap-header" data-aos="fade-up">
     <h1>Project Roadmap</h1>
-    <p>Scroll down to track our journey through time</p>
+    <p>Scroll down to track my journey</p>
 </header>
 
 <div class="timeline-container" id="timelineSec">
@@ -427,34 +396,34 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </div>
 
-<section class="bento-section">
+<section class="bento-section" data-aos="fade-up">
     <h2 class="section-title">My World</h2>
     <div class="bento-grid">
         <div class="bento-item exp-box">
             <span class="bento-tag">Work Experience</span>
-            <h3>Student Developer & Transcriber</h3>
-            <p>Built multiple educational and portfolio projects, sharing knowledge through YSJ blog posts and tutorials. Also, Working at Pharma Company for Transcribe audios whoch are for customer`s feedbacks on medical Products.</p>
-            <div class="bento-footer">2022 - Present</div>
+            <h3>Community Pharmacy Assistant & Transcriber</h3>
+            <p>Worked about 3 years at Cleopatra New Pharmacy. After a year of training I ran the evening shift alone, 6 days a week, serving 100+ patients a day, and I set up a WhatsApp ordering channel. I also do transcription and research work since 2025.</p>
+            <div class="bento-footer">2023 - Present</div>
         </div>
 
         <div class="bento-item stat-box">
             <div class="stat-content">
-                <h2 class="counter" data-target="30">0</h2>
-                <p>Projects Completed</p>
+                <h2 class="counter" data-target="3">0</h2>
+                <p>Years of Pharmacy Work</p>
             </div>
         </div>
 
         <div class="bento-item edu-box">
             <span class="bento-tag">Education</span>
-            <h3>STEM High School</h3>
-            <p>Excellence in Science, Technology, and English, GPA: 3.8 / 4.0</p>
+            <h3>STEM High School, 6th of October</h3>
+            <p>Science track, expected graduation July 2027. Capstone topic: Communication &amp; Public Health.</p>
             <i class="fas fa-graduation-cap bento-icon"></i>
         </div>
 
         <div class="bento-item stat-box">
             <div class="stat-content">
                 <h2 class="counter" data-target="6">0</h2>
-                <p>Companies Certificates.</p>
+                <p>Certificates Earned</p>
             </div>
         </div>
 
@@ -465,9 +434,10 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </section>
 
-<section class="expertise-section" id="expertise">
+<section class="expertise-section" id="expertise" data-aos="fade-up">
     <div class="expertise-container">
         <div class="exp-header">
+            <span class="sec-kicker">04 - SERVICES</span>
             <h2 class="section-title">What I Can Do</h2>
             <p>Practical skills built through projects, competitions, and self-learning.</p>
         </div>
@@ -500,35 +470,68 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </section>
 
-<section class="testimonial-section" id="testimonials">
-    <h2 class="section-title">Wall of Praise</h2>
-    <div class="testimonial-grid">
-        <div class="test-card">
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p>"Kerolos is highly committed and detail-oriented. His transcription work is accurate, well-structured, and always delivered on time."</p>
-            <div class="user-info">
-                <img src="https://i.pravatar.cc/150?u=1" alt="User">
-                <div>
-                    <h4>YSJ Platform Team</h4>
-                    <span>Content & Media</span>
-                </div>
-            </div>
+<section class="expertise-section" id="honors" data-aos="fade-up">
+    <div class="expertise-container">
+        <div class="exp-header">
+            <span class="sec-kicker">05 - HONORS</span>
+            <h2 class="section-title">Honors &amp; Awards</h2>
+            <p>Competitions, scholarships and programs I am proud of.</p>
         </div>
-        <div class="test-card">
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <p>"A motivated STEM student with strong programming fundamentals. His web projects show clarity, logic, and continuous improvement."</p>
-            <div class="user-info">
-                <img src="https://i.pravatar.cc/150?u=2" alt="User">
-                <div>
-                    <h4>STEM Mentor</h4>
-                    <span>Academic Guidance</span>
+        <div class="exp-list">
+            <div class="exp-item">
+                <span class="exp-num">01</span>
+                <div class="exp-text">
+                    <h3>ISEF Egypt 2026 - 2nd Place Nationally</h3>
+                    <p>Led team Optecx to 2nd place in Materials Science with a borosilicate lens that reduces headlight glare for safer night driving.</p>
                 </div>
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">02</span>
+                <div class="exp-text">
+                    <h3>DECI Scholarship (2022-2025)</h3>
+                    <p>Fully funded Ministry of Communications scholarship, selected from about 3,000 applicants. Completed Levels 1, 2 and 3, including AWS Educate.</p>
+                </div>
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">03</span>
+                <div class="exp-text">
+                    <h3>ECPC Teens 2025</h3>
+                    <p>National finalist in the Egyptian Collegiate Programming Contest for teens.</p>
+                </div>
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">04</span>
+                <div class="exp-text">
+                    <h3>Physics Brawl 2025</h3>
+                    <p>Competed in the international Physics Brawl competition (ranked 237th).</p>
+                </div>
+                <i class="fas fa-atom"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">05</span>
+                <div class="exp-text">
+                    <h3>NASA Space Apps 2026</h3>
+                    <p>Mentor at the NASA Space Apps Challenge.</p>
+                </div>
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="exp-item">
+                <span class="exp-num">06</span>
+                <div class="exp-text">
+                    <h3>One Heart</h3>
+                    <p>Community and charity volunteering.</p>
+                </div>
+                <i class="fas fa-hand-holding-heart"></i>
             </div>
         </div>
     </div>
 </section>
 
-<section class="faq-section" id="faq">
+<section class="faq-section" id="faq" data-aos="fade-up">
+    <span class="sec-kicker">06 - FAQ</span>
     <h2 class="section-title">Common Queries</h2>
     <div class="faq-accordion">
         <div class="faq-item">
@@ -552,15 +555,14 @@ STEM high school student and programmer with a strong passion for web developmen
     </div>
 </section>
 
-<div class="container" id="contact" style="padding: 100px 0;">
+<div class="container" id="contact" style="padding: 100px 0;" data-aos="fade-up">
     <h2 class="section-title" style="text-align: center;">Connect With Me</h2>
     <div id="cards" style="margin: 0 auto; justify-content: center;">
         <div class="card">
             <div class="card_content">
                 <i class="fa-brands fa-instagram icon-social"></i>
                 <h2>Instagram</h2>
-                <p>Followers : <span>625k</span></p>
-                <a href="#">
+                <a href="https://www.instagram.com/kerolos_michelle/" target="_blank">
                     <i class="fa-solid fa-link"></i>
                     <span class="btn-social">Follow me</span>
                 </a>
@@ -571,8 +573,7 @@ STEM high school student and programmer with a strong passion for web developmen
             <div class="card_content">
                 <i class="fa-brands fa-github icon-social"></i>
                 <h2>Github</h2>
-                <p>Followers : <span>150k</span></p>
-                <a href="#">
+                <a href="https://github.com/kerolosmichelle" target="_blank">
                     <i class="fa-solid fa-link "></i>
                     <span class="btn-social">Follow me</span>
                 </a>
@@ -583,8 +584,7 @@ STEM high school student and programmer with a strong passion for web developmen
             <div class="card_content">
                 <i class="fa-brands fa-linkedin icon-social"></i>
                 <h2>Linkedin</h2>
-                <p>Connection : <span>100k</span></p>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/kerolos-micheal-71696234b/" target="_blank">
                     <i class="fa-solid fa-link"></i>
                     <span class="btn-social">Connect</span>
                 </a>
@@ -607,7 +607,7 @@ STEM high school student and programmer with a strong passion for web developmen
         </p>
 
         <div class="cta-wrapper">
-            <a href="mailto:kerolosmichelle2@gmail.com" class="magnetic-btn">
+            <a href="mailto:kerolosmichelle171@gmail.com" class="magnetic-btn">
                 <span>Contact Me <i class="fas fa-paper-plane"></i></span>
             </a>
         </div>
@@ -622,8 +622,13 @@ STEM high school student and programmer with a strong passion for web developmen
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="static/js/script.js"></script>
+<script>
+  document.getElementById('plain-toggle').addEventListener('click', function () {
+    var on = document.body.classList.toggle('plain-mode');
+    this.textContent = on ? 'Full view' : 'Plain view';
+  });
+</script>
 <script src="static/js/navbar.js"></script>
-<script src="static/js/typing.js"></script>
 <script src="static/js/social-cards.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
