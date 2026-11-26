@@ -1358,3 +1358,22 @@ body.plain-mode .hero-image img { filter: none; }
 /* Contact card title contrast (both modes) */
 #cards .card h2 { color: var(--text-main); margin: 12px 0 6px; }
 #cards .card .btn-social { color: var(--accent); }
+
+
+/* ===== Hero entrance: plays once on load, no loader page ===== */
+@keyframes riseIn {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: none; }
+}
+.hero-text > *, .hero-image, .scroll-cue {
+    animation: riseIn .7s cubic-bezier(.22,.61,.36,1) both;
+}
+.hero-text > *:nth-child(1) { animation-delay: .05s; }
+.hero-text > *:nth-child(2) { animation-delay: .15s; }
+.hero-text > *:nth-child(3) { animation-delay: .25s; }
+.hero-text > *:nth-child(4) { animation-delay: .35s; }
+.hero-text > *:nth-child(5) { animation-delay: .45s; }
+.hero-text > *:nth-child(6) { animation-delay: .55s; }
+.hero-text > *:nth-child(7) { animation-delay: .65s; }
+.hero-image { animation-delay: .35s; }
+.scroll-cue { animation-delay: .9s; }
