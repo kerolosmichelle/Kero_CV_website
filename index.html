@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f7f7;--ink:#10201d;--mut:#4d6660;--acc:#0e8a6d;--acc2:#0b6e8a;--card:#ffffff;--line:#dde7e4;--glow:rgba(14,138,109,.16)}
-[data-theme="dark"]{--bg:#0a0f0e;--ink:#e4f2ee;--mut:#8aa79f;--acc:#2ee6a8;--acc2:#38b6e0;--card:#101916;--line:#1e2f2a;--glow:rgba(46,230,168,.12)}
+:root{--bg:#ffffff;--ink:#333333;--mut:#5f5f5f;--acc:#d63f88;--acc2:#9e2b66;--card:#f7f7f7;--line:#e6e6e6;--glow:rgba(214,63,136,.15)}
+[data-theme="dark"]{--bg:#141416;--ink:#ededed;--mut:#aeaeae;--acc:#ff5fa2;--acc2:#e54d96;--card:#1d1d20;--line:#2d2d31;--glow:rgba(255,95,162,.14)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;transition:background .4s,color .4s;background-image:radial-gradient(var(--glow) 1px,transparent 1px);background-size:26px 26px}
@@ -39,7 +39,7 @@ h1 .grad{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-backgr
 @keyframes pulse{50%{opacity:.35}}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 .btn{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;padding:13px 24px;border-radius:11px;transition:all .25s;display:inline-block}
-.btn-a{background:var(--acc);color:#06110d}
+.btn-a{background:var(--acc);color:#ffffff}
 .btn-a:hover{box-shadow:0 0 26px var(--glow),0 8px 20px rgba(0,0,0,.18);transform:translateY(-3px)}
 .btn-b{border:1px solid var(--line);color:var(--ink)}
 .btn-b:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-3px)}
@@ -70,7 +70,7 @@ h2{font-size:clamp(28px,4.6vw,40px);margin-bottom:30px}
 .school p{color:var(--mut);font-size:15px}
 .contact{text-align:center}
 .mail{font-family:'JetBrains Mono',monospace;font-size:clamp(15px,3.4vw,24px);display:inline-block;margin:12px 0 24px;padding:14px 26px;border:1px dashed var(--acc);border-radius:13px;transition:all .3s}
-.mail:hover{background:var(--acc);color:#06110d;box-shadow:0 0 30px var(--glow)}
+.mail:hover{background:var(--acc);color:#ffffff;box-shadow:0 0 30px var(--glow)}
 .socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .socials a{border:1px solid var(--line);border-radius:10px;padding:9px 18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink);transition:all .25s}
 .socials a:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-3px)}
