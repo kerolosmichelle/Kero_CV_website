@@ -1,673 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <title>Kerolos Michelle | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-    <div class="nav-container">
-        <div class="logo">K.<span>Michelle</span></div>
-
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <div class="nav-aside" id="nav-aside">
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#honors">Honors</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <button id="plain-toggle" class="plain-toggle" type="button" title="Plain quick view">Plain view</button>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                        <span class="ball"></span>
-                    </div>
-                </label>
-            </div>
-        </div>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerolos Michelle | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--ink:#333333;--mut:#6e6e6e;--acc:#d63f88;--acc-hi:#e54d96;--line:#e6e6e6;--card:#f7f7f7}
+[data-theme="dark"]{--bg:#19191b;--ink:#ededed;--mut:#aeaeae;--acc:#ff6fae;--acc-hi:#ff5fa2;--line:#303034;--card:#222225}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16.5px;line-height:1.6;transition:background .45s,color .45s;overflow-x:hidden}
+.disp{font-family:"Archivo Black",Arial,sans-serif;font-weight:400;letter-spacing:-.02em;text-transform:uppercase}
+.mono{font-family:"Space Mono",monospace}
+a{color:var(--acc);text-decoration:none}
+.kick{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 4vw;border-bottom:1px solid var(--line)}
+nav .brand{font-family:"Space Mono",monospace;font-weight:700;font-size:15px;color:var(--ink)}
+nav .links{display:flex;gap:20px;align-items:center}
+nav .links a{font-family:"Space Mono",monospace;font-size:13px;color:var(--mut);transition:color .25s}
+nav .links a:hover{color:var(--acc)}
+#th{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 14px;font-family:"Space Mono",monospace;font-size:12px;cursor:pointer;transition:transform .2s}
+#th:hover{transform:scale(1.07)}
+/* HERO: asymmetric 12-col grid */
+.hero{display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px;padding:64px 4vw 0;align-items:start}
+.hero .hl{grid-column:1/9;position:relative;z-index:2}
+.hero h1{font-size:clamp(52px,11vw,140px);line-height:.92;display:block}
+.hero h1 .l2{color:transparent;-webkit-text-stroke:2px var(--acc-hi);text-stroke:2px var(--acc-hi)}
+.hero .sub{margin-top:26px;max-width:420px;color:var(--mut);font-size:17px}
+.hero .sub b{color:var(--ink)}
+.hero .hr{grid-column:9/13;grid-row:1;margin-top:110px;position:relative;z-index:1}
+.hero .hr::before{content:"";position:absolute;inset:-18px -18px auto auto;width:78%;height:78%;background:var(--acc-hi);z-index:-1;transform:translate(18px,-18px)}
+.hero .hr img{width:100%;display:block;filter:grayscale(.15);transform:rotate(2deg);border:3px solid var(--ink);transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.hero .hr:hover img{transform:rotate(0)}
+.hero .tag{position:absolute;left:-30px;bottom:22px;background:var(--ink);color:var(--bg);font-family:"Space Mono",monospace;font-size:12px;padding:8px 14px;transform:rotate(-3deg)}
+/* marquee band */
+.band{margin-top:70px;background:var(--acc-hi);color:#fff;overflow:hidden;padding:14px 0;transform:rotate(-1.2deg) scale(1.02)}
+.band .track{display:flex;gap:44px;white-space:nowrap;animation:mq 22s linear infinite;font-family:"Archivo Black",sans-serif;font-size:20px;text-transform:uppercase}
+.band .track span{display:flex;gap:44px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections: label column + wide content */
+section{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:40px;padding:84px 4vw;border-bottom:1px solid var(--line)}
+section .lab{position:sticky;top:90px;align-self:start}
+section .lab .num{font-family:"Space Mono",monospace;font-size:12px;color:var(--mut)}
+section .lab h2{font-family:"Archivo Black",sans-serif;font-size:clamp(24px,3vw,36px);text-transform:uppercase;line-height:1.05;margin-top:8px;letter-spacing:-.01em}
+.about-c{max-width:640px}
+.about-c p{color:var(--mut);margin-bottom:16px;font-size:17px}
+.about-c p b{color:var(--ink)}
+.about-c img{width:min(420px,100%);margin-top:20px;border:3px solid var(--ink);transform:rotate(-1.5deg);display:block}
+/* projects: offset asymmetric cards */
+.proj{display:grid;grid-template-columns:repeat(12,1fr);gap:28px 24px}
+.pcard{background:var(--card);border:1px solid var(--line);padding:30px;position:relative;transition:transform .35s,box-shadow .35s}
+.pcard:hover{transform:translate(-4px,-6px);box-shadow:8px 10px 0 var(--acc-hi)}
+.pcard .idx{font-family:"Space Mono",monospace;font-size:12px;color:var(--acc);letter-spacing:.15em}
+.pcard h3{font-size:clamp(20px,2.4vw,28px);font-weight:700;margin:10px 0 10px;letter-spacing:-.01em}
+.pcard p{color:var(--mut);font-size:15px}
+.pcard a.v{display:inline-block;margin-top:16px;font-family:"Space Mono",monospace;font-size:13px;border-bottom:2px solid var(--acc)}
+.p1{grid-column:1/8}.p2{grid-column:6/13;margin-top:-40px}.p3{grid-column:2/9}
+/* honors: big-number table */
+.hrow{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:baseline;padding:26px 10px;border-top:1px solid var(--line);transition:background .3s,color .3s}
+.hrow:last-child{border-bottom:1px solid var(--line)}
+.hrow .big{font-family:"Archivo Black",sans-serif;font-size:clamp(34px,4.5vw,58px);color:transparent;-webkit-text-stroke:1.5px var(--mut);transition:.3s}
+.hrow h3{font-size:19px;font-weight:700}
+.hrow p{color:var(--mut);font-size:15px;margin-top:5px;max-width:560px}
+.hrow:hover{background:var(--acc-hi);color:#fff}
+.hrow:hover .big{-webkit-text-stroke:1.5px #fff}
+.hrow:hover p{color:#ffe3f0}
+.hrow .yr{font-family:"Space Mono",monospace;font-size:13px;color:var(--mut)}
+.hrow:hover .yr{color:#fff}
+/* community: staggered blocks */
+.comm{display:grid;grid-template-columns:repeat(12,1fr);gap:26px 24px}
+.cblock{border:2px solid var(--ink);padding:26px;background:var(--bg);transition:transform .35s,background .35s,color .35s}
+.cblock h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.cblock p{color:var(--mut);font-size:14.5px}
+.cblock:hover{background:var(--ink);color:var(--bg);transform:rotate(-1deg)}
+.cblock:hover p{color:var(--mut)}
+.c1{grid-column:1/7}.c2{grid-column:7/13;margin-top:44px}.c3{grid-column:2/8;margin-top:-20px}.c4{grid-column:8/13;margin-top:20px}
+/* contact */
+.contact{display:block;text-align:left;padding:100px 4vw;border-bottom:none}
+.contact .kick{display:block;margin-bottom:18px}
+.contact a.mail{font-family:"Archivo Black",sans-serif;font-size:clamp(24px,5.4vw,64px);text-transform:uppercase;color:var(--ink);line-height:1.05;letter-spacing:-.02em;position:relative;display:inline-block;word-break:break-all}
+.contact a.mail::after{content:"";position:absolute;left:0;bottom:-6px;height:8px;width:100%;background:var(--acc-hi);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.6,.2,1)}
+.contact a.mail:hover::after{transform:scaleX(1)}
+.socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.socials a{font-family:"Space Mono",monospace;font-size:13px;border:1px solid var(--line);padding:9px 18px;color:var(--ink);transition:.25s}
+.socials a:hover{background:var(--acc-hi);border-color:var(--acc-hi);color:#fff;transform:translateY(-3px)}
+footer{padding:26px 4vw;font-family:"Space Mono",monospace;font-size:12.5px;color:var(--mut);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.6,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media(max-width:820px){
+ .hero{grid-template-columns:1fr;gap:34px;padding-top:44px}
+ .hero .hl,.hero .hr{grid-column:1/-1;grid-row:auto}
+ .hero .hr{margin-top:0;max-width:340px}
+ section{grid-template-columns:1fr;gap:20px;padding:56px 5vw}
+ section .lab{position:static}
+ .p1,.p2,.p3,.c1,.c2,.c3,.c4{grid-column:1/-1;margin-top:0}
+ nav .links a{display:none}
+ .hrow{grid-template-columns:64px 1fr}.hrow .yr{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+<span class="brand">KM &mdash; portfolio / 2026</span>
+<div class="links">
+<a href="#about">about</a><a href="#projects">projects</a><a href="#honors">honors</a><a href="#community">community</a><a href="#contact">contact</a>
+<button id="th" aria-label="Toggle theme">dark</button>
+</div>
 </nav>
 
-<main>
-    
-
-<section class="hero">
-    <div class="hero-container">
-        <div class="hero-text">
-            <span class="status-pill"><span class="status-dot"></span> Open to internships and learning opportunities</span>
-            <h1>Hi, I’m <br><span>Kerolos Michelle</span></h1>
-
-            <h2 class="role">
-                And I am a <span id="typing"></span>
-            </h2>
-
-            <p>
-STEM high school student and programmer with a strong passion for web development, problem solving, and technology. I build clean, responsive web applications using HTML, CSS, Bootstrap, and JavaScript, with a solid foundation in Python.
-            </p>
-
-            <p class="core-stack">Python <span>/</span> Flask <span>/</span> HTML &amp; CSS <span>/</span> JavaScript</p>
-
-            <div class="hero-buttons">
-                <a href="#portfolio" class="btn-primary">View Projects</a>
-                <a href="#contact" class="btn-secondary">Contact Me</a>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/Kerolos.Michelle" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/kerolos_michelle/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kerolos-gowed-71696234b/" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/kerolosmichelle" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="static/images/profile.jpg" alt="Kerolos Michelle">
-        </div>
-    </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll to explore">SCROLL TO EXPLORE <i class="fas fa-chevron-down"></i></a>
-</section>
-<section id="about" class="section" data-aos="fade-up">
-    <span class="sec-kicker">01 - ABOUT</span>
-    <h2>About Me</h2>
-    <p class="section-text">
-        I am a STEM high school student at a government STEM school in 6th of October (Science track, graduating July 2027). I spent three years working in a community pharmacy, I build websites, and I compete in science and programming competitions. I aim to combine technology and creativity to build practical and educational projects.
-    </p>
-</section>
-
-<section class="section" id="school" data-aos="fade-up" style="text-align:center;">
-    <h2 class="section-title">My School</h2>
-    <img src="static/images/school.jpg" alt="Kerolos at his school" style="max-width:420px;width:100%;border-radius:20px;margin:20px auto;display:block;">
-    <p class="section-text">At my school, where I study science and technology and where most of my projects started.</p>
-</section>
-
-<section class="os-section">
-    <div class="window-container">
-        <div class="window-header">
-            <div class="window-controls">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-            </div>
-            <div class="window-title">cmd — about_me.sh</div>
-        </div>
-        
-        <div class="window-main">
-            <div class="window-sidebar">
-                <button class="nav-item active" onclick="switchTab(this, 'bio')"><i class="fas fa-user"></i> Bio</button>
-                <button class="nav-item" onclick="switchTab(this, 'hobbies')"><i class="fas fa-heart"></i> Hobbies</button>
-                <button class="nav-item" onclick="switchTab(this, 'setup')"><i class="fas fa-desktop"></i> Setup</button>
-            </div>
-            
-            <div class="window-content">
-                <div id="bio" class="tab-pane active">
-                    <p class="typing-text">> Hello!</p>
-                    <p>Hello! I am Kerolos Michelle, a STEM high school student and programmer. I enjoy creating web applications and exploring programming challenges, especially in Python and front-end development.</p>
-                    <p>Current focus: Improving my web development skills and building projects that combine STEM and technology.</p>
-                </div>
-                <div id="hobbies" class="tab-pane">
-                        <p>> My main interests outside school and coding:</p>
-                        <ul>
-                            <li>🧪 STEM competitions and Physics Olympiads</li>
-                            <li>💻 Web development and programming projects</li>
-                            <li>📚 Learning new technologies and improving skills</li>
-                            <li>♟️ Playing Chess</li>
-                            <li>🤝 Volunteering</li>
-                            <li>📖 English courses and German courses</li>
-                        </ul>
-                </div>
-                <div id="setup" class="tab-pane">
-                    <p>> My current workstation:</p>
-                    <p>
-                        <ul>
-                            <li>Python programming</li>
-                            <li>Front-end web development (HTML, CSS, Bootstrap, JS)</li>
-                            <li>Problem-solving and STEM projects(Capstone)</li>
-                            <li>Participating in academic competitions</li>
-                        </ul></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="about-robot-section">
-    <h2 class="section-title">System Analysis: Me</h2>
-    <div class="robot-container">
-        <div class="robot-core">
-            <div class="robot-head">
-                <div class="eye left-eye"></div>
-                <div class="eye right-eye"></div>
-                <div class="mouth"></div>
-            </div>
-            <div class="scanning-line"></div>
-            <div class="core-glow"></div>
-        </div>
-
-        <div class="circuit-lines">
-            <div class="line l1"></div>
-            <div class="line l2"></div>
-            <div class="line l3"></div>
-            <div class="line l4"></div>
-        </div>
-
-        <div class="info-nodes">
-            <div class="node node-tl">
-                <div class="node-icon"><i class="fas fa-microchip"></i></div>
-                <div class="node-content">
-                    <h3>Logic Core</h3>
-                    <p>Strong analytical thinking developed through STEM education, programming, and physics competitions.</p>
-                </div>
-            </div>
-
-            <div class="node node-tr">
-                <div class="node-icon"><i class="fas fa-eye"></i></div>
-                <div class="node-content">
-<h3>Visual Sensors</h3>
-<p>Focused on clean layouts and user-friendly interfaces. I pay attention to detail in every project I build.</p>
-                </div>
-            </div>
-
-            <div class="node node-bl">
-                <div class="node-icon"><i class="fas fa-heart"></i></div>
-                <div class="node-content">
-<h3>Empathy Drive</h3>
-<p>I enjoy building projects that are practical and educational, making technology accessible and useful.</p>
-                </div>
-            </div>
-
-            <div class="node node-br">
-                <div class="node-icon"><i class="fas fa-bolt"></i></div>
-                <div class="node-content">
-<h3>High Output</h3>
-<p>Constantly learning new programming languages and tools to improve my skills and complete challenging projects.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="skills-section" data-aos="fade-up">
-    <span class="sec-kicker">03 - SKILLS</span>
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <i class="fa-brands fa-html5"></i>
-                <h3>HTML, CSS, Bootstrap</h3>
-            <div class="progress-wrapper">
-                <div class="progress-bar" style="--width: 90%;"></div>
-            </div>
-        </div>
-        <div class="skill-card">
-            <i class="fa-brands fa-js"></i>
-            <h3>JavaScript</h3>
-            <div class="progress-wrapper">
-                <div class="progress-bar" style="--width: 85%;"></div>
-            </div>
-        </div>
-        <div class="skill-card">
-            <i class="fa-solid fa-code"></i>
-                <h3>Python & Problem Solving</h3>
-            <div class="progress-wrapper">
-                <div class="progress-bar" style="--width: 75%;"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="orbit-section">
-    <div class="orbit-container">
-        <h2 class="section-title" style="position: relative; z-index: 10;">My Tech Stack</h2>
-        <div class="orbit-scene">
-            <div class="core-hub">
-                <i class="fas fa-user-astronaut"></i>
-                <span>Creator</span>
-            </div>
-
-            <div class="ring ring-1">
-                <div class="tech-icon" style="--idx: 0;"><i class="fab fa-js"></i><span>JS</span></div>
-                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="tech-icon" style="--idx: 2;"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="tech-icon" style="--idx: 3;"><i class="fab fa-aws"></i><span>AWS</span></div>
-
-            </div>
-
-            <div class="ring ring-2">
-                <div class="tech-icon" style="--idx: 0;"><i class="fas fa-code"></i><span>Code</span></div>
-                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-google"></i><span>Google</span></div>
-                <div class="tech-icon" style="--idx: 2;"><i class="fab fa-git-alt"></i><span>Git</span></div>
-            </div>
-
-             <div class="ring ring-3">
-                <div class="tech-icon" style="--idx: 1;"><i class="fab fa-microsoft"></i><span>Microsoft</span></div>
-                <div class="tech-icon" style="--idx: 0;"><i class="fas fa-headphones"></i><span>Headphones</span></div>
-                <div class="tech-icon" style="--idx: 2;"><i class="fas fa-microphone"></i><span>Microphone</span></div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="portfolio-section" id="portfolio" data-aos="fade-up">
-    <div class="portfolio-header">
-        <div><span class="sec-kicker">02 - PROJECTS</span>
-        <h2 class="section-title">My Portfolio</h2></div>
-        <div class="slider-controls">
-            <button class="control-btn prev" onclick="moveSlider(-1)"><i class="fas fa-chevron-left"></i></button>
-            <button class="control-btn next" onclick="moveSlider(1)"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-
-    <div class="slider-viewport">
-        <div class="slider-track" id="sliderTrack">
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&q=80&w=600" alt="Sourial Deacons School Website">
-                        <div class="badge">Design + Front-End</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Sourial Deacons School Website</h3>
-                        <p>Designed the UI in Figma and built the frontend for the Deacons' School of Archangel Sourial &amp; St. Mina Church.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>Figma</span>
-                                <span>Front-End</span>
-                            </div>
-                            <a href="https://sourialdeacons.com" class="view-link" target="_blank">Visit Site <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Personal Portfolio Website">
-                        <div class="badge">Web</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Personal Portfolio Website</h3>
-                        <p>This website. Built with HTML, CSS, JavaScript and Flask, and deployed on GitHub Pages.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>HTML/CSS/JS</span>
-                                <span>Flask</span>
-                            </div>
-                            <a href="https://github.com/kerolosmichelle/Kero_CV_website" class="view-link" target="_blank">Source Code <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-item">
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Results Python Web App">
-                        <div class="badge">Python / Flask</div>
-                    </div>
-                    <div class="card-body">
-                        <h3>Results Python Web App</h3>
-                        <p>A web application built with Python and Flask to display student results dynamically, hosted on PythonAnywhere.</p>
-                        <div class="card-footer">
-                            <div class="tech-stack">
-                                <span>Python</span>
-                                <span>Flask</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider-dots" id="sliderDots"></div>
-</section>
-
-<header class="roadmap-header" data-aos="fade-up">
-    <h1>Project Roadmap</h1>
-    <p>Scroll down to track my journey</p>
+<header class="hero">
+<div class="hl">
+<span class="kick rv">Giza, Egypt &mdash; web developer &amp; student</span>
+<h1 class="disp rv">Kerolos<br><span class="l2">Michelle</span></h1>
+<p class="sub rv">Web developer, programmer and transcriber. <b>Open to internships and learning opportunities.</b> I build clean, responsive web applications with HTML, CSS, Bootstrap and JavaScript, on a solid Python foundation.</p>
+</div>
+<div class="hr rv">
+<img src="static/images/profile.jpg" alt="Kerolos Michelle">
+<span class="tag">est. 2008 &mdash; Cairo</span>
+</div>
 </header>
+<div class="band" aria-hidden="true"><div class="track">
+<span>Web development &middot; Python &middot; Flask &middot; JavaScript &middot; Problem solving &middot; ISEF 2nd place &middot; STEM school &middot;</span>
+<span>Web development &middot; Python &middot; Flask &middot; JavaScript &middot; Problem solving &middot; ISEF 2nd place &middot; STEM school &middot;</span>
+</div></div>
 
-<div class="timeline-container" id="timelineSec">
-    <div class="main-line"></div>
-    <div class="progress-fill" id="progressFill"></div>
-
-    <div class="item">
-        <div class="icon-node"><i class="fas fa-brain"></i></div>
-        <div class="timeline-card">
-            <h3>Concept Art</h3>
-            <p>Developed the visual identity and structure for projects, focusing on usability and design clarity.</p>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="icon-node"><i class="fas fa-layer-group"></i></div>
-        <div class="timeline-card">
-            <h3>Architecture</h3>
-            <p>Built the foundation of web projects using HTML, CSS, and Flask frameworks for reliable performance.</p>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="icon-node"><i class="fas fa-microchip"></i></div>
-        <div class="timeline-card">
-            <h3>AI Integration</h3>
-            <p>Implemented Python logic for automation and calculations, integrating problem-solving algorithms where needed.</p>
-        </div>
-    </div>
-
-    <div class="item">
-        <div class="icon-node"><i class="fas fa-globe"></i></div>
-        <div class="timeline-card">
-            <h3>World Launch</h3>
-            <p>Hosted projects online and made them publicly accessible using PythonAnywhere and static hosting for front-end pages.</p>
-        </div>
-    </div>
+<section id="about">
+<div class="lab rv"><span class="num">01</span><h2>About</h2></div>
+<div class="about-c">
+<p class="rv">STEM high school student at a government STEM school in 6th of October, science track, graduating July 2027. I spent three years working in a community pharmacy, I build websites, and I compete in science and programming competitions. I aim to combine technology and creativity to build practical and educational projects.</p>
+<p class="rv">At Cleopatra New Pharmacy I trained for a year, then ran the evening shift alone, six days a week, serving 100+ patients a day, and set up a WhatsApp ordering channel. I also do transcription and research work since 2025.</p>
+<img class="rv" src="static/images/school.jpg" alt="Kerolos in front of his school">
 </div>
-
-<section class="bento-section" data-aos="fade-up">
-    <h2 class="section-title">My World</h2>
-    <div class="bento-grid">
-        <div class="bento-item exp-box">
-            <span class="bento-tag">Work Experience</span>
-            <h3>Community Pharmacy Assistant & Transcriber</h3>
-            <p>Three years at Cleopatra New Pharmacy. After a year of training I ran the evening shift alone, 6 days a week, serving 100+ patients a day, and I set up a WhatsApp ordering channel. I also do transcription and research work since 2025.</p>
-            <div class="bento-footer">2023 - 2026</div>
-        </div>
-
-        <div class="bento-item stat-box">
-            <div class="stat-content">
-                <h2 class="counter" data-target="3">0</h2>
-                <p>Years of Pharmacy Work</p>
-            </div>
-        </div>
-
-        <div class="bento-item edu-box">
-            <span class="bento-tag">Education</span>
-            <h3>STEM High School, 6th of October</h3>
-            <p>Science track, expected graduation July 2027. Capstone topic: Communication &amp; Public Health.</p>
-            <i class="fas fa-graduation-cap bento-icon"></i>
-        </div>
-
-        <div class="bento-item stat-box">
-            <div class="stat-content">
-                <h2 class="counter" data-target="6">0</h2>
-                <p>Certificates Earned</p>
-            </div>
-        </div>
-
-        <div class="bento-item quote-box">
-            <p>"Technology and learning go hand in hand. I aim to build solutions that educate and inspire."</p>
-            <span>- Kerolos Michelle</span>
-        </div>
-    </div>
 </section>
 
-<section class="expertise-section" id="expertise" data-aos="fade-up">
-    <div class="expertise-container">
-        <div class="exp-header">
-            <span class="sec-kicker">04 - SERVICES</span>
-            <h2 class="section-title">What I Can Do</h2>
-            <p>Practical skills built through projects, competitions, and self-learning.</p>
-        </div>
-        <div class="exp-list">
-            <div class="exp-item">
-                <span class="exp-num">01</span>
-                <div class="exp-text">
-                    <h3>Web Design & UI</h3>
-                    <p>Designing clean, responsive, and user-friendly interfaces using HTML, CSS, and Bootstrap.</p>
-                </div>
-                <i class="fas fa-bezier-curve"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">02</span>
-                <div class="exp-text">
-                    <h3>Frontend Development</h3>
-                    <p>Building interactive web pages with JavaScript and structured layouts that work on all devices.</p>
-                </div>
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">03</span>
-                <div class="exp-text">
-                    <h3>Transcription & Content Editing</h3>
-                    <p>Providing accurate transcription and content formatting with strong attention to detail and clarity.</p>
-                </div>
-                <i class="fas fa-chart-line"></i>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="expertise-section" id="honors" data-aos="fade-up">
-    <div class="expertise-container">
-        <div class="exp-header">
-            <span class="sec-kicker">05 - HONORS</span>
-            <h2 class="section-title">Honors &amp; Awards</h2>
-            <p>Competitions, scholarships and programs I am proud of.</p>
-        </div>
-        <div class="exp-list">
-            <div class="exp-item">
-                <span class="exp-num">01</span>
-                <div class="exp-text">
-                    <h3>ISEF Egypt 2026 - 2nd Place Nationally</h3>
-                    <p>Led team Optecx to 2nd place in Materials Science with a borosilicate lens that reduces headlight glare for safer night driving.</p>
-                </div>
-                <i class="fas fa-trophy"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">02</span>
-                <div class="exp-text">
-                    <h3>DECI Scholarship (2022-2025)</h3>
-                    <p>Fully funded Ministry of Communications scholarship, selected from about 3,000 applicants. Completed Levels 1, 2 and 3, including AWS Educate.</p>
-                </div>
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">03</span>
-                <div class="exp-text">
-                    <h3>ECPC Teens 2025</h3>
-                    <p>National finalist in the Egyptian Collegiate Programming Contest for teens.</p>
-                </div>
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">04</span>
-                <div class="exp-text">
-                    <h3>Physics Brawl 2025</h3>
-                    <p>Competed in the international Physics Brawl competition (ranked 237th).</p>
-                </div>
-                <i class="fas fa-atom"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">05</span>
-                <div class="exp-text">
-                    <h3>NASA Space Apps 2026</h3>
-                    <p>Mentor at the NASA Space Apps Challenge.</p>
-                </div>
-                <i class="fas fa-rocket"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">06</span>
-                <div class="exp-text">
-                    <h3>One Heart (3lb Wa7ed)</h3>
-                    <p>Community service team at St. Paul the Apostle Church: hospital visits, recreational days and teaching.</p>
-                </div>
-                <i class="fas fa-hand-holding-heart"></i>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="expertise-section" id="community" data-aos="fade-up">
-    <div class="expertise-container">
-        <div class="exp-header">
-            <span class="sec-kicker">06 - COMMUNITY</span>
-            <h2 class="section-title">Leadership &amp; Community</h2>
-            <p>Teaching, volunteering and organizing with my church community.</p>
-        </div>
-        <div class="exp-list">
-            <div class="exp-item">
-                <span class="exp-num">01</span>
-                <div class="exp-text">
-                    <h3>Teaching Children at Church</h3>
-                    <p>I teach children in grades 3 to 6 at St. Paul the Apostle Church, helping them learn Coptic Orthodox hymns and church traditions.</p>
-                </div>
-                <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">02</span>
-                <div class="exp-text">
-                    <h3>57357 Hospital Volunteer Visits</h3>
-                    <p>With the One Heart team I join volunteer visits to 57357 Children's Cancer Hospital, taking part in activities that bring joy and encouragement to young patients.</p>
-                </div>
-                <i class="fas fa-hospital"></i>
-            </div>
-            <div class="exp-item">
-                <span class="exp-num">03</span>
-                <div class="exp-text">
-                    <h3>Recreational Days</h3>
-                    <p>I help plan and run church recreational days for children, including a large day for young people with special needs where I was responsible for a group of middle-school boys and helped guide younger volunteers.</p>
-                </div>
-                <i class="fas fa-users"></i>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="faq-section" id="faq" data-aos="fade-up">
-    <span class="sec-kicker">07 - FAQ</span>
-    <h2 class="section-title">Common Queries</h2>
-    <div class="faq-accordion">
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">
-                <span>How did you learn your skills?</span>
-                <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Most of my education is self-taught through YouTube, online platforms, and hands-on projects, supported by certificates from different companies.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">
-                <span>What services do you currently offer?</span>
-                <i class="fas fa-plus"></i>
-            </div>
-            <div class="faq-answer">
-                <p>I work on web development projects and professional transcription, focusing on accuracy, clarity, and clean structure.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="container" id="contact" style="padding: 100px 0;" data-aos="fade-up">
-    <h2 class="section-title" style="text-align: center;">Connect With Me</h2>
-    <div id="cards" style="margin: 0 auto; justify-content: center;">
-        <div class="card">
-            <div class="card_content">
-                <i class="fa-brands fa-instagram icon-social"></i>
-                <h2>Instagram</h2>
-                <a href="https://www.instagram.com/kerolos_michelle/" target="_blank">
-                    <i class="fa-solid fa-link"></i>
-                    <span class="btn-social">Follow me</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card_content">
-                <i class="fa-brands fa-github icon-social"></i>
-                <h2>Github</h2>
-                <a href="https://github.com/kerolosmichelle" target="_blank">
-                    <i class="fa-solid fa-link "></i>
-                    <span class="btn-social">Follow me</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card_content">
-                <i class="fa-brands fa-linkedin icon-social"></i>
-                <h2>Linkedin</h2>
-                <a href="https://www.linkedin.com/in/kerolos-gowed-71696234b/" target="_blank">
-                    <i class="fa-solid fa-link"></i>
-                    <span class="btn-social">Connect</span>
-                </a>
-            </div>
-        </div>
-    </div>
+<section id="projects">
+<div class="lab rv"><span class="num">02</span><h2>Projects</h2></div>
+<div class="proj">
+<div class="pcard p1 rv"><span class="idx">PRJ-01</span><h3>Sourial Deacons School website</h3><p>Designed the Figma concept and built the frontend for the Deacons' School of Archangel Sourial &amp; St. Mina Church, Omrania.</p><a class="v" href="https://sourialdeacons.com" target="_blank">visit site &rarr;</a></div>
+<div class="pcard p2 rv"><span class="idx">PRJ-02</span><h3>This portfolio</h3><p>Designed and built my own CV website, hosted free on GitHub Pages.</p><a class="v" href="https://github.com/kerolosmichelle/Kero_CV_website" target="_blank">view source &rarr;</a></div>
+<div class="pcard p3 rv"><span class="idx">PRJ-03</span><h3>Results web app</h3><p>A Python web app that fetches and displays student results in a clean interface.</p></div>
 </div>
+</section>
 
+<section id="honors">
+<div class="lab rv"><span class="num">03</span><h2>Honors</h2></div>
+<div>
+<div class="hrow rv"><span class="big">01</span><div><h3>ISEF Egypt 2026 &mdash; 2nd place nationally</h3><p>Led team Optecx in Materials Science with a borosilicate lens that reduces headlight glare for safer night driving.</p></div><span class="yr">2026</span></div>
+<div class="hrow rv"><span class="big">02</span><div><h3>DECI scholarship</h3><p>Fully funded Ministry of Communications scholarship, selected from about 3,000 applicants. Completed Levels 1, 2 and 3, including AWS Educate.</p></div><span class="yr">2022-25</span></div>
+<div class="hrow rv"><span class="big">03</span><div><h3>Community pharmacy assistant</h3><p>Three years at Cleopatra New Pharmacy, running the evening shift and serving 100+ patients a day.</p></div><span class="yr">2023-26</span></div>
+<div class="hrow rv"><span class="big">04</span><div><h3>ECPC Teens 2025</h3><p>National finalist in the Egyptian Collegiate Programming Contest for teens.</p></div><span class="yr">2025</span></div>
+<div class="hrow rv"><span class="big">05</span><div><h3>Physics Brawl 2025</h3><p>Competed in the international Physics Brawl competition, ranked 237th.</p></div><span class="yr">2025</span></div>
+<div class="hrow rv"><span class="big">06</span><div><h3>One Heart (3lb Wa7ed)</h3><p>Community service team at St. Paul the Apostle Church: hospital visits, recreational days and teaching.</p></div><span class="yr">ongoing</span></div>
+<p class="rv" style="margin-top:18px;color:var(--mut);font-size:15px">Also: mentor at the NASA Space Apps Challenge 2026.</p>
+</div>
+</section>
 
+<section id="community">
+<div class="lab rv"><span class="num">04</span><h2>Community</h2></div>
+<div class="comm">
+<div class="cblock c1 rv"><h3>Teaching children at church</h3><p>I teach children in grades 3 to 6 at St. Paul the Apostle Church, helping them learn Coptic Orthodox hymns and church traditions.</p></div>
+<div class="cblock c2 rv"><h3>57357 hospital visits</h3><p>With the One Heart team I join volunteer visits to 57357 Children's Cancer Hospital, taking part in activities that bring joy and encouragement to young patients.</p></div>
+<div class="cblock c3 rv"><h3>Recreational days</h3><p>I help plan and run church recreational days for children, including a large day for young people with special needs where I was responsible for a group of middle-school boys and helped guide younger volunteers.</p></div>
+<div class="cblock c4 rv"><h3>NASA Space Apps 2026</h3><p>Mentor at the NASA Space Apps Challenge.</p></div>
+</div>
+</section>
 
+<section id="contact" class="contact">
+<span class="kick rv">05 &mdash; Contact</span>
+<a class="mail rv" href="mailto:kerolosmichelle2@gmail.com">kerolosmichelle2<br>@gmail.com</a>
+<div class="socials rv">
+<a href="https://github.com/kerolosmichelle" target="_blank">github</a>
+<a href="https://www.linkedin.com/in/kerolos-gowed-71696234b/" target="_blank">linkedin</a>
+<a href="https://www.facebook.com/Kerolos.Michelle" target="_blank">facebook</a>
+<a href="https://www.instagram.com/kerolos_michelle/" target="_blank">instagram</a>
+</div>
+</section>
 
-</main>
+<footer><span>&copy; 2026 Kerolos Michelle</span><span>built by hand &middot; github pages</span></footer>
 
-<footer class="glow-footer">
-    <div class="footer-content">
-        <h2>Let’s build something <span class="accent-text">meaningful</span></h2>
-        <p>
-            STEM student and aspiring software engineer, open to learning opportunities,
-            internships, and collaborative projects.
-        </p>
-
-        <div class="cta-wrapper">
-            <a href="mailto:kerolosmichelle171@gmail.com" class="magnetic-btn">
-                <span>Contact Me <i class="fas fa-paper-plane"></i></span>
-            </a>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2025 Kerolos Michelle. Built with passion for technology.</p>
-        </div>
-    </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="static/js/script.js"></script>
 <script>
-  document.getElementById('plain-toggle').addEventListener('click', function () {
-    var on = document.body.classList.toggle('plain-mode');
-    this.textContent = on ? 'Full view' : 'Plain view';
-  });
+var root=document.documentElement,btn=document.getElementById('th');
+function setT(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'light':'dark';try{localStorage.setItem('km-theme-c',t)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('km-theme-c')}catch(e){}
+setT(saved||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+btn.onclick=function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark')};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4)*0.05+'s';io.observe(el)});
 </script>
-<script src="static/js/navbar.js"></script>
-<script src="static/js/social-cards.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 </body>
 </html>
